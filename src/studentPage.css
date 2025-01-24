@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.Home{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 160vh; 
+  height: 40vh;
+  max-height: 600px;
+  font-size: 30px;
+}
+
+.Facts{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  width: 60vh;
+  height: 40vh;
+  max-height: 600px;
+  font-size: 30px;
+  border: solid 2px rgb(0, 255, 0);
+}
