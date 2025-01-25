@@ -1,34 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { authenticateUser } from './backend';
 import './loginOptions.css';
 
 function LoginStudent() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    const user = authenticateUser(email, password, 'student');
+    if (user) {
+      navigate('/student');
+    } else {
+      alert('Invalid credentials');
+    }
+  };
+
   return (
     <div className='container'>
       <div className='header'>
         EcoCup Student Login
         <div className='title'>Enter your ID and password</div>
 
-        {/* Email Input */}
         <label htmlFor="email">Enter your ID</label>
         <input
           type='email'
           id="email"
           placeholder='Enter your ID'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
-        {/* Password Input */}
         <label htmlFor="password">Enter your password</label>
         <input
           type='password'
           id="password"
           placeholder='Enter your password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
-        {/* Log in Button */}
-        <button>Log in</button>
-
-        {/* Back to Login Options */}
-        <div className='backToLogin'>Back to login options</div>
+        <button onClick={handleLogin}>Log in</button>
+        <div className='backToLogin' onClick={() => navigate('/')}>Back to login options</div>
       </div>
     </div>
   );

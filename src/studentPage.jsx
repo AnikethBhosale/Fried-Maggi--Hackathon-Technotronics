@@ -1,29 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { uploadedImages, reusableCupsData, disposableCupsData } from './backend';
 import './studentPage.css';
+import Header from "./studentHeader";
 
-function StudentPage (){
-    return (
-        <div>
-          <div className='Home'>
-            <div className='Facts'>
-              <div className='Facts_text'>some facts</div>
-              <div className='randomFact'>some varia</div>
-            </div>
+function StudentPage() {
+  const facts = [
+    "Reusable cups can last for years, reducing waste significantly.",
+    "A single reusable cup can replace hundreds of disposable cups.",
+    "Many coffee shops offer discounts for bringing your own cup.",
+    "Disposable cups often can't be recycled due to their plastic lining.",
+    "The energy used to produce a reusable cup is offset after just 15 uses.",
+    "Globally, we use over 16 billion disposable coffee cups each year.",
+    "Reusable cups often keep your drink hot (or cold) for longer.",
+    "Some disposable cups take over 20 years to decompose."
+  ];
 
+  const [currentFact, setCurrentFact] = useState(facts[0]);
+  const [latestImage, setLatestImage] = useState('');
+  const [reusableCups, setReusableCups] = useState(0);
+  const [disposableCups, setDisposableCups] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFact(facts[Math.floor(Math.random() * facts.length)]);
+    }, 7000); // Change fact every 7 seconds
 
-            <div className='points_impact'>
-              <div className='points'>500</div>
+    // Fetch the latest uploaded image
+    if (uploadedImages.length > 0) {
+      setLatestImage(uploadedImages[0].imageUrl);
+    }
 
-              <div className='impact'>
-                <div className='reusable_cup'>40</div>
-                <div className='use_n_throw'>22</div>
-                <div className='math'>(40%22)*100</div>
-              </div>
-            </div>
+    // Calculate total reusable and disposable cups
+    const totalReusableCups = reusableCupsData.reduce((sum, data) => sum + data.cupsUsed, 0);
+    const totalDisposableCups = disposableCupsData.reduce((sum, data) => sum + data.cupsUsed, 0);
+
+    setReusableCups(totalReusableCups);
+    setDisposableCups(totalDisposableCups);
+
+    return () => clearInterval(interval);
+  }, [reusableCupsData, disposableCupsData]); // Re-run effect when data changes
+
+  const pointsRemaining = 1000; // Example total points
+  const environmentalImpact = reusableCups * 0.5 - disposableCups * 0.2; // Simple formula
+
+  return (
+    <div>
+      <Header />
+      <div className="Home">
+        <div className='left'>
+          <div className='factHeader'>Facts</div>
+          <div className='randomFacts'>{currentFact}</div>
+        </div>
+
+        <div className='right'>
+          <div className='Points'>
+            <p>Points Remaining: {pointsRemaining}</p>
+          </div>
+          <div className='mathematics'>
+            <p>Reusable Cups Used: {reusableCups}</p>
+            <p>Disposable Cups Used: {disposableCups}</p>
+            <p>Environmental Impact: {environmentalImpact.toFixed(2)}</p>
           </div>
         </div>
-    );
+      </div>
+
+      {/* Display the latest uploaded image */}
+      {latestImage && (
+        <div className="latest-image">
+          <h2>Latest Uploaded Image</h2>
+          <img src={latestImage} alt="Latest Uploaded" style={{ maxWidth: '100%', height: 'auto' }} />
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default StudentPage;

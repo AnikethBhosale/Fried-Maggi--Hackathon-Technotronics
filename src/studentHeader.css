@@ -1,0 +1,42 @@
+.header-container {
+  padding: 1rem 1.5rem;
+  margin-left: -210px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  color: #06cb10;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-left: -150px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.8rem;
+  margin-left: 20px;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #007006;
+  text-decoration-line: underline;
+}

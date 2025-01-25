@@ -1,0 +1,36 @@
+/* studentPage.css */
+.vendor-data {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.vendor-data h2 {
+  margin-bottom: 10px;
+}
+
+.vendor-data table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vendor-data th, .vendor-data td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.vendor-data th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.vendor-data tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.vendor-data tr:hover {
+  background-color: #ddd;
+}

@@ -1,31 +1,87 @@
-body{
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(233, 233, 233, 0.712);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .Home{
+  margin-top: 30vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 160vh; 
-  height: 40vh;
-  max-height: 600px;
-  font-size: 30px;
+  width: 100%;
+  gap: 50vh;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
 }
 
-.Facts{
-  padding: 10px;
+.left{
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
+  justify-content: top;
   align-items: center;
-  width: 60vh;
-  height: 40vh;
-  max-height: 600px;
-  font-size: 30px;
-  border: solid 2px rgb(0, 255, 0);
+  width: 50vh;
+  height: 50vh;
+  padding-top: 20px;
+  background-color: rgb(158, 255, 158);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.factHeader{
+  font-size: 4em;
+  font-weight: bold;
+  color: rgb(0, 138, 0);
+}
+.randomFacts{
+  font-size: 1.7em;
+  color: rgb(0, 138, 0);
+  padding-left:7px ;
+  padding-right: 7px;
+  padding-top: 5px;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  gap: 8vh;
+  justify-content: center;
+  align-items: center;
+  width: 50vh;
+  height: 50vh;
+}
+
+.Points{
+  padding: 6px;
+  display: flex;
+  font-size: 34px;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 50vh;
+  height: 50vh;
+  background-color: rgb(158, 195, 255);
+  color: rgb(19, 19, 167);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mathematics{
+  background-color: rgb(255, 221, 158);
+  color: rgb(167, 110, 19);
+  padding: 6px;
+  width: 50vh;
+  font-size: 1.7em;
+  padding-left:7px ;
+  padding-right: 7px;
+  padding-top: 5px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
