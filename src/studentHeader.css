@@ -8,6 +8,7 @@
   backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.8);
   color: #06cb10;
+  margin-left: -210px;
 }
 
 .header-content {
