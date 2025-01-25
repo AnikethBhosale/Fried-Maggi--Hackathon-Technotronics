@@ -13,7 +13,7 @@ function LoginStudent() {
     if (user) {
       navigate('/student');
     } else {
-      alert('Invalid credentials');
+      alert('Invalid credentials or not a student email.');
     }
   };
 

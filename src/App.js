@@ -6,7 +6,8 @@ import LoginStudent from "./loginStudent.jsx";
 import LoginVendor from "./loginVendor.jsx";
 import StudentPage from "./studentPage.jsx";
 import VendorIP from "./vendorPage.jsx";
-import AdminPage from "./AdminPage.jsx"; // Import the new AdminPage
+import AdminPage from "./AdminPage.jsx";
+import RedeemPage from "./RedeemPage.jsx"; // Import the RedeemPage
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/login/vendor" element={<LoginVendor />} />
         <Route path="/student" element={<StudentPage />} />
         <Route path="/vendor" element={<VendorIP />} />
-        <Route path="/admin" element={<AdminPage />} /> {/* Add AdminPage route */}
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/redeem" element={<RedeemPage />} /> {/* Add RedeemPage route */}
       </Routes>
     </Router>
   );

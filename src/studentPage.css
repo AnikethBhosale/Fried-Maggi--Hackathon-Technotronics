@@ -1,16 +1,19 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: rgba(233, 233, 233, 0.712);
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-image: url('./eco7.jpeg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
 }
 
 .Home{
-  margin-top: 30vh;
+  margin-top: 100vh;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -84,4 +87,48 @@ body {
   padding-top: 5px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./fonts/Bruce Forever.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.ranking {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.ranking h2 {
+  margin-bottom: 10px;
+}
+
+.ranking table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ranking th, .ranking td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.ranking th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.ranking tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.ranking tr:hover {
+  background-color: #ddd;
 }

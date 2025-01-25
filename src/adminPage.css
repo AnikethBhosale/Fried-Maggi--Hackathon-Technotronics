@@ -36,3 +36,9 @@
 .back-button:hover {
   background-color: #d32f2f;
 }
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./fonts/Bruce Forever.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

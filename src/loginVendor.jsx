@@ -13,7 +13,7 @@ function LoginVendor() {
     if (user) {
       navigate('/vendor');
     } else {
-      alert('Invalid credentials');
+      alert('Invalid credentials or not a vendor email.');
     }
   };
 

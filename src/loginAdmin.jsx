@@ -11,9 +11,9 @@ function LoginAdmin() {
   const handleLogin = () => {
     const user = authenticateUser(email, password, 'admin');
     if (user) {
-      navigate('/admin'); // Redirect to AdminPage
+      navigate('/admin');
     } else {
-      alert('Invalid credentials');
+      alert('Invalid credentials or not an admin email.');
     }
   };
 

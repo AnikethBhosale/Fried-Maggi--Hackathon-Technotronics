@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { uploadedImages, reusableCupsData, disposableCupsData } from './backend';
+import { uploadedImages, reusableCupsData, disposableCupsData, getTopStudents, users } from './backend';
 import './studentPage.css';
 import Header from "./studentHeader";
 
@@ -19,6 +19,8 @@ function StudentPage() {
   const [latestImage, setLatestImage] = useState('');
   const [reusableCups, setReusableCups] = useState(0);
   const [disposableCups, setDisposableCups] = useState(0);
+  const [topStudents, setTopStudents] = useState([]);
+  const [pointsRemaining, setPointsRemaining] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,16 +39,24 @@ function StudentPage() {
     setReusableCups(totalReusableCups);
     setDisposableCups(totalDisposableCups);
 
+    // Fetch top 3 students
+    setTopStudents(getTopStudents());
+
+    // Fetch points for the logged-in student (replace with actual logged-in student email)
+    const loggedInStudent = users.find((u) => u.email === "student1@example.com");
+    if (loggedInStudent) {
+      setPointsRemaining(loggedInStudent.points);
+    }
+
     return () => clearInterval(interval);
   }, [reusableCupsData, disposableCupsData]); // Re-run effect when data changes
 
-  const pointsRemaining = 1000; // Example total points
   const environmentalImpact = reusableCups * 0.5 - disposableCups * 0.2; // Simple formula
 
   return (
     <div>
       <Header />
-      <div className="Home">
+      <div id="home" className="Home">
         <div className='left'>
           <div className='factHeader'>Facts</div>
           <div className='randomFacts'>{currentFact}</div>
@@ -64,9 +74,30 @@ function StudentPage() {
         </div>
       </div>
 
-      {/* Display the latest uploaded image */}
+      <div id="ranking" className="ranking">
+        <h2>Top 3 Students</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Email</th>
+              <th>Reusable Cups</th>
+            </tr>
+          </thead>
+          <tbody>
+            {topStudents.map((student, index) => (
+              <tr key={student.id}>
+                <td>{index + 1}</td>
+                <td>{student.email}</td>
+                <td>{student.reusableCups}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
       {latestImage && (
-        <div className="latest-image">
+        <div id="community" className="latest-image">
           <h2>Latest Uploaded Image</h2>
           <img src={latestImage} alt="Latest Uploaded" style={{ maxWidth: '100%', height: 'auto' }} />
         </div>

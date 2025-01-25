@@ -1,36 +1,53 @@
-/* studentPage.css */
-.vendor-data {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+.vendor-tabs {
+  margin: 20px 0;
 }
 
-.vendor-data h2 {
-  margin-bottom: 10px;
+.vendor-tabs button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
 }
 
-.vendor-data table {
-  width: 100%;
+.vendor-tabs button.active {
+  background-color: #388E3C;
+}
+
+.vendor-tabs button:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
   border-collapse: collapse;
 }
 
-.vendor-data th, .vendor-data td {
+th, td {
   padding: 10px;
   border: 1px solid #ddd;
   text-align: left;
 }
 
-.vendor-data th {
+th {
   background-color: #4CAF50;
   color: white;
 }
 
-.vendor-data tr:nth-child(even) {
+tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.vendor-data tr:hover {
+tr:hover {
   background-color: #ddd;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./fonts/Bruce Forever.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

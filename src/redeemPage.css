@@ -1,0 +1,50 @@
+.redeem-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.vendor-email {
+  margin: 20px 0;
+}
+
+.vendor-email input {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #4CAF50;
+  border-radius: 6px;
+}
+
+.items-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  border: 1px solid #4CAF50;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  background-color: #E8F5E9;
+}
+
+.item button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.item button:hover {
+  background-color: #388E3C;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./fonts/Bruce Forever.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
